@@ -16,6 +16,13 @@ module.exports = (_ctx) => ({
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     [
+      'script',
+      {
+        'data-domain': 'docs.metamask.io',
+        src: 'https://plausible.io/js/plausible.js',
+      },
+    ],
+    [
       'meta',
       { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
     ],
@@ -46,6 +53,7 @@ module.exports = (_ctx) => ({
   themeConfig: {
     repo: 'MetaMask/metamask-docs',
     docsDir: 'docs',
+    docsBranch: 'main',
     editLinks: true,
     logo: '/metamask-fox.svg',
     smoothScroll: true,
@@ -161,7 +169,12 @@ const guideSidebar = [
   {
     title: 'Snaps',
     collapsable: false,
-    children: ['snaps', 'snaps-development-guide', 'snaps-rpc-api'],
+    children: [
+      'snaps',
+      'snaps-development-guide',
+      'snaps-rpc-api',
+      'snaps-patching-dependencies',
+    ],
   },
   {
     title: 'Resources',
